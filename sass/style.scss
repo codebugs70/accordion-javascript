@@ -1,0 +1,64 @@
+// sass ./sass/style.scss ./css/style.css --watch
+$primary: #6a5af9;
+$secondary: #d66efd;
+$colorPink: #f62682;
+$colorGreen: #20e3b2;
+$colorOrange: #ff6651;
+$colorGray: #eee;
+$colorBlue: #2cccff;
+$colorHover: rgba(0, 0, 0, 0.1);
+/* =================================================== */
+body {
+  background-color: #333;
+  color: white;
+  font-family: sans-serif;
+  // center
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: black;
+}
+.accordion {
+  &-header {
+    padding: 20px;
+    background-color: $colorOrange;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    &.active span {
+      transform: rotate(180deg);
+      transition: all 0.2s linear;
+    }
+    &.active {
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    * {
+      pointer-events: none;
+    }
+  }
+  &-content {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: $colorGray;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.2s linear;
+
+    p {
+      padding: 20px;
+      word-break: break-all;
+    }
+  }
+}
